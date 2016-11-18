@@ -6,9 +6,19 @@ I decided to convert it all to static HTML/CSS.
 
 ## Making Changes
 
-The site is built from CodeKit's .kit extension of HTML. This was chosen for its offer of variables and partials.
+The site is built from [CodeKit](https://codekitapp.com/)'s [.kit](https://codekitapp.com/help/kit/) extension of HTML. This was chosen for its offer of variables and partials.
 
 CodeKit will build the site w/ little effort but it is not required. There are several compilers available for node, grunt, gulp, etc. (See [.kit compilers](https://npms.io/search?q=codekit))
+
+### So much CSS
+
+- [ ] Remove reliance on Stargazer/Dart #someday
+
+### Those SVGs
+
+_For future me that forgets how/why the SVGs are used the way they are on this build..._
+
+SVGs from Illustrator or Sketch get optimized by CodeKit into the `/dist` directory. I then manually copy that optimized SVG code into new `_svg-<filename>.kit` partials to `@import` into other .kit files. Somewhat tedious, but seems to work well for reusing them across different pages/partials.
 
 ## Form Processing
 
