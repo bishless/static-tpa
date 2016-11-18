@@ -1,0 +1,39 @@
+// @import "http://fonts.googleapis.com/css?family=Lato:400,900";
+
+.font-headlines,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "proxima-nova-condensed", "Arial Narrow", Arial, sans-serif;
+	font-weight: 800;
+	font-style: normal;
+}
+
+.font-primary,
+body,
+input,
+textarea,
+.label-checkbox,
+.label-radio,
+.required,
+#site-description {
+	font-family: "proxima-nova", sans-serif;
+}
+.font-secondary {
+	font-family: 'Calibri', sans-serif;
+}
+
+#site-title.font-headlines {
+	font-size: 3rem;
+}
+
+.widget-title > .wrap,
+.attachment-meta-title > .wrap {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    text-transform: none;
+}

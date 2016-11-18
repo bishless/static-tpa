@@ -1,0 +1,47 @@
+/*********************
+	MIXINS
+*********************/
+
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin animation($animation) {
+	-moz-animation: $animation;
+	-o-animation: $animation;
+	-webkit-animation: $animation;
+	animation: $animation;
+}
+
+@mixin breakpoint($point) {
+	@if $point == papabear {
+		@media (min-width: 980px) { @content; }
+	}
+	@else if $point == mamabear {
+		@media (min-width: 481px) and (max-width: 979px) { @content; }
+	}
+	// @else if $point == teenbear {
+	//   // Landscape phone to portrait tablet
+	//   @media (max-width: 767px) { @content; }
+	// }
+	@else if $point == babybear {
+		@media (max-width: 480px) { @content; }
+	}
+}
+
+/*********************
+	EXTENDS
+*********************/
+
+/* Image Replacement Technique from:
+ * https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757c9e03dda4e463fb0d4db5a5f82d7
+ */
+%ir {
+	border: 0;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	background-color: transparent;
+}

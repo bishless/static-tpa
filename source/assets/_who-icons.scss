@@ -1,0 +1,237 @@
+%figcap-a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+svg {
+	// position: relative;
+	// top: 23px;
+	// left: 23px;
+	// display: block;
+	// height: 120px;
+	// width: 120px;
+//	height: 6em;
+//	width: 6em;
+	// border: 1px solid lighten($body-copy-color, 10%);
+	// border-radius: 100%;
+}
+
+.who-container {
+	background: black(0.8);
+	border-radius: 0.75em;
+	margin: 0 0 1.5rem;
+
+	h2 {
+		text-align: center;
+		color: #eee;
+		border: none;
+		padding: .75rem 0;
+	}
+}
+
+
+
+.who-grid {
+	overflow: hidden;
+	margin: 0;
+	padding: 0 0 0 0;
+	width: 100%;
+	list-style: none;
+	text-align: center;
+
+	figure {
+		position: relative;
+		z-index: 1;
+		display: inline-block;
+		overflow: hidden;
+		margin: -0.135em;
+		width: 25%;
+		height: 320px;
+		text-align: center;
+		cursor: pointer;
+		@include breakpoint(papabear) {
+			width: 25%;
+			height: 320px;
+		}
+		@include breakpoint(mamabear) {
+			width: 50%;
+			height: 320px;
+		}
+		@include breakpoint(babybear) {
+			width: 100%;
+			height: 260px;
+		}
+
+		.hole {
+			display: block;
+			width: 160px;
+			height: 160px;
+			margin: 20px auto 0;
+			border: 1px solid white(0.2);
+			border-radius: 50%;
+			overflow: hidden;
+
+		}
+
+		img,
+		svg {
+			position: relative;
+			top: 23px;
+			left: 23px;
+			display: block;
+			height: 114px;
+			width: 114px;
+		}
+
+		.svg-orange {fill: white(0.2);}
+		.svg-green {fill: white(0.2);}
+		.svg-grey {fill: white(0.2);}
+
+		figcaption {
+			@extend %figcap-a;
+			// padding: 2em;
+			// color: white(1);
+			text-transform: uppercase;
+			font-size: 1.25em;
+			backface-visibility: hidden;
+
+			&::before,
+			&::after {
+				pointer-events: none;
+			}
+		}
+
+		/* Anchor will cover the whole item by default */
+		/* For some effects it will show as a button */
+		a {
+			@extend %figcap-a;
+			z-index: 2;
+			text-indent: 200%;
+			// white-space: nowrap;
+			font-size: 0;
+			opacity: 0;
+		}
+
+		h2 {
+			// word-spacing: -0.15em;
+			word-break: break-word;
+			hyphens: none;
+			// letter-spacing: -1px;
+			font-weight: 100;
+			line-height: 1.2;
+			// @include breakpoint(babybear) {
+			// 	font-size: 0.6em;
+			// 	line-height: 1;
+			// }
+			border: 0;
+
+			span {
+				font-weight: 800;
+				// @include breakpoint(papabear) { font-weight: 800; }
+				// @include breakpoint(mamabear) { font-weight: 600; }
+				// @include breakpoint(babybear) { font-weight: 600; }
+			}
+		}
+
+		h2,
+		p {
+			margin: 0;
+		}
+
+		p {
+			letter-spacing: 1px;
+			// font-size: 68.5%;
+		}
+	}
+}
+
+.services figure:nth-child(2) h2 {
+	letter-spacing: -1px;
+}
+
+
+/*---------------*/
+/***** Honey *****/
+/*---------------*/
+
+figure.effect-honey {
+
+	// &:hover {
+	// 	background: rgba($ppd-orange, 0.5);
+	// }
+
+	// &:hover h2 {
+	// 	text-shadow: 0px 0px 12px rgba(0, 0, 0, 1);
+	// }
+
+	&:hover figcaption::before,
+	&:hover h2,
+	&:hover h2 i {
+		opacity: 1;
+		transform: translate3d(0,0,0);
+		// @include breakpoint(babybear) { background: black(0.5); }
+	}
+
+	// &:hover img {
+	// 	opacity: 1;
+	// }
+
+	&:hover .hole {
+		border-color: white(1);
+	}
+
+	&:hover .svg-orange { fill: $ppd-orange; }
+	&:hover .svg-green { fill: $ppd-green; }
+	&:hover .svg-grey {	fill: white(0.8); }
+
+	figcaption::before {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 10px;
+		content: '';
+		transform: translate3d(0,10px,0);
+		@include breakpoint(babybear) {
+			transform: translate3d(0,5px,0);
+		}
+	}
+
+	figcaption::before,
+	h2 {
+		transition: transform 0.35s;
+	}
+
+	h2 {
+		position: absolute;
+		bottom: 0;
+		@include breakpoint(babybear) {
+			bottom: 5px;
+		}
+		left: 0;
+		// color: #fff;
+		// padding: 1em 1em;
+		width: 100%;
+		text-align: center;
+		transform: translate3d(0,-30px,0);
+		@include breakpoint(babybear) {
+			padding: 0.5em 0;
+			transform: translate3d(0,-15px,0);
+		}
+
+		i {
+			font-style: normal;
+			letter-spacing: 1px;
+			opacity: 0;
+			transition: opacity 0.35s, transform 0.35s;
+			transform: translate3d(0,-30px,0);
+			@include breakpoint(babybear) {
+				// transform: translate3d(0,-15px,0);
+				display: none;
+			}
+		}
+	}
+}
