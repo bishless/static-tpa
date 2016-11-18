@@ -3,21 +3,12 @@
     "^(node_modules|bower_components|\\.imdone|target|build|dist|logs)[\\/\\\\]?|\\.(git|svn|hg|npmignore)|\\~$|\\.(jpg|png|gif|swp|ttf|otf)$"
   ],
   "watcher": true,
-  "keepEmptyPriority": true,
+  "keepEmptyPriority": false,
   "code": {
     "include_lists": [
       "TODO",
       "DOING",
-      "DONE",
-      "PLANNING",
-      "FIXME",
-      "ARCHIVE",
-      "HACK",
-      "CHANGED",
-      "XXX",
-      "IDEA",
-      "NOTE",
-      "REVIEW"
+      "DONE"
     ]
   },
   "lists": [],
@@ -33,5 +24,23 @@
     "id": "582f2c3fb8711306423afb63",
     "name": "static-tpa",
     "useImdoneioForPriority": true
+  },
+  "meta": {
+    "gh": {
+      "urlTemplate": "https://github.com/bishless/static-tpa/issues/%s",
+      "titleTemplate": "View github issue %s",
+      "icon": "icon-octoface"
+    }
+  },
+  "languages": {
+    ".kit": {
+      "name": "codekit",
+      "symbol": "//",
+      "block": {
+        "start": "<!--",
+        "end": "-->",
+        "ignore": "-"
+      }
+    },
   }
 }
