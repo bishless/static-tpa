@@ -55,3 +55,8 @@ $alert-danger: #e51c23;
 .entry-content .svg-orange { fill: ppdorange(1); }
 .entry-content .svg-green { fill: ppdgreen(1); }
 .entry-content .svg-grey { fill: black(0.8); }
+
+.alert-yellow { color: $alert-yellow; }
+.alert-red { color: $alert-red; }
+.alert-green { color: $alert-green; }
+.alert-blue { color: $alert-blue; }
