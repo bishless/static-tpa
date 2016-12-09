@@ -349,11 +349,11 @@ AddDefaultCharset utf-8
 # Redirect from the `http://` to the `https://` version of the URL.
 # https://wiki.apache.org/httpd/RewriteHTTPToHTTPS
 
-# <IfModule mod_rewrite.c>
-#    RewriteEngine On
-#    RewriteCond %{HTTPS} !=on
-#    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-# </IfModule>
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+   RewriteCond %{HTTPS} !=on
+   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
 
 # ----------------------------------------------------------------------
 # | Suppressing / Forcing the `www.` at the beginning of URLs          |
@@ -401,20 +401,20 @@ AddDefaultCharset utf-8
 # </IfModule>
 
 
-Redirect 301 /retirement-plan-services/retirement-plan-design/ http://thirdpartyadministrator.net/services-retirement-plan-design.html
-Redirect 301 /retirement-plan-services/retirement-plan-administration/ http://thirdpartyadministrator.net/services-retirement-plan-administration.html
-Redirect 301 /retirement-plan-services/retirement-plan-consulting/ http://thirdpartyadministrator.net/services-retirement-plan-consulting.html
-Redirect 301 /retirement-plan-services/actuarial-services/ http://thirdpartyadministrator.net/services-actuarial-services.html
-Redirect 301 /retirement-plan-services/ http://thirdpartyadministrator.net/services.html
-Redirect 301 /services/ http://thirdpartyadministrator.net/services.html
-Redirect 301 /what-is-a-third-party-administrator/ http://thirdpartyadministrator.net/what-is-a-third-party-administrator.html
-Redirect 301 /contact/ http://thirdpartyadministrator.net/contact.html
-Redirect 301 /request-an-illustration/ http://thirdpartyadministrator.net/request-an-illustration.html
-Redirect 301 /how-can-we-help/ http://thirdpartyadministrator.net/how-can-we-help.html
-Redirect 301 /employers/ http://thirdpartyadministrator.net/employers.html
-Redirect 301 /collaboration-with-cpas/ http://thirdpartyadministrator.net/collaboration-with-cpas.html
-Redirect 301 /collaboration-with-financial-advisors/ http://thirdpartyadministrator.net/collaboration-with-financial-advisors.html
-Redirect 301 /actuarial-solutions/ http://thirdpartyadministrator.net/actuarial-solutions.html
+Redirect 301 /retirement-plan-services/retirement-plan-design/ https://thirdpartyadministrator.net/services-retirement-plan-design.html
+Redirect 301 /retirement-plan-services/retirement-plan-administration/ https://thirdpartyadministrator.net/services-retirement-plan-administration.html
+Redirect 301 /retirement-plan-services/retirement-plan-consulting/ https://thirdpartyadministrator.net/services-retirement-plan-consulting.html
+Redirect 301 /retirement-plan-services/actuarial-services/ https://thirdpartyadministrator.net/services-actuarial-services.html
+Redirect 301 /retirement-plan-services/ https://thirdpartyadministrator.net/services.html
+Redirect 301 /services/ https://thirdpartyadministrator.net/services.html
+Redirect 301 /what-is-a-third-party-administrator/ https://thirdpartyadministrator.net/what-is-a-third-party-administrator.html
+Redirect 301 /contact/ https://thirdpartyadministrator.net/contact.html
+Redirect 301 /request-an-illustration/ https://thirdpartyadministrator.net/request-an-illustration.html
+Redirect 301 /how-can-we-help/ https://thirdpartyadministrator.net/how-can-we-help.html
+Redirect 301 /employers/ https://thirdpartyadministrator.net/employers.html
+Redirect 301 /collaboration-with-cpas/ https://thirdpartyadministrator.net/collaboration-with-cpas.html
+Redirect 301 /collaboration-with-financial-advisors/ https://thirdpartyadministrator.net/collaboration-with-financial-advisors.html
+Redirect 301 /actuarial-solutions/ https://thirdpartyadministrator.net/actuarial-solutions.html
 
 
 # ######################################################################
