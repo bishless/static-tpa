@@ -10,5 +10,7 @@ config.codekit3
 */codekit-config.json
 .codekit-cache
 
-### Actual Project Files ###
-/dist
+.DS_Store
+/backup
+/assets
+*.html
