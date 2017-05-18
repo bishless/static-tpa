@@ -13,4 +13,5 @@ config.codekit3
 .DS_Store
 /backup
 /assets
+/stargazer
 *.html
