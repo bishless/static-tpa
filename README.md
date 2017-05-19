@@ -1,6 +1,6 @@
 # static-tpa
 
-This is a static HTML version of the WordPress site (using a child theme for Justin Tadlock's excellent  [Stargazer](https://github.com/justintadlock/stargazer)) that resided at thirdpartyadministrator.net. When it came time to move it to a new host, it was clear that the site content hadn't been modified in a couple years. Meanwhile, the site was the target of numerous brute force login attempts and other attacks. Plus, it was a collection of < 20 unchanging pages w/ no blog posts of any sort.
+This is a static HTML version of the WordPress site (using a child theme for Justin Tadlock's excellent  [Stargazer](https://github.com/justintadlock/stargazer)) that resided at thirdpartyadministrator.net. When it came time to move it to a new hosting provider, it was clear that the site content hadn't been modified in a couple years. Meanwhile, the site was the target of numerous brute force login attempts and other attacks. Plus, it was a collection of < 20 unchanging pages w/ no blog posts of any sort.
 
 I decided to convert it all to static HTML/CSS.
 
