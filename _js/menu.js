@@ -16,6 +16,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 $( document ).ready(function() {
+  "use strict";
 	$( '.menu-toggle' ).click(
 		function() {
 			$( this ).parent().children( '.wrap, .menu-items' ).fadeToggle();
