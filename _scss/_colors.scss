@@ -1,62 +1,51 @@
-/*********************
-COLORS
-*********************/
-
 @function black($opacity) {
-	@return rgba(0,0,0,$opacity);
+	@return rgba(0, 0, 0, $opacity);
 }
 
 @function white($opacity) {
-	@return rgba(255,255,255,$opacity);
+	@return rgba(255, 255, 255, $opacity);
 }
 
 @function ppdorange($opacity) {
-	@return rgba(210,132,23,$opacity);
+	@return rgba(210, 132, 23, $opacity);
 }
 
 @function ppdgreen($opacity) {
-	@return rgba(85,108,17,$opacity);
+	@return rgba(85, 108, 17, $opacity);
 }
 
-/* B F C O */
+// B F C O
 $bfco-orange: rgba(190, 58, 52, 1); // Pantone 180 C selected by Caryn Metcalf
 
-/* P P D */
-$ppd-orange: rgba(210,132,23,1);
-$ppd-green: rgba(85,108,17,1);
-$ppdorangetrans: rgba(210,132,23,0.7);
-$ppdgreentrans: rgba(85,108,17,0.7);
+// P P D
+$ppd-orange: rgba(210, 132, 23, 1);
+$ppd-green: rgba(85, 108, 17, 1);
+$ppdorangetrans: rgba(210, 132, 23, .7);
+$ppdgreentrans: rgba(85, 108, 17, .7);
 
-$debug-pink: rgba(255,0,0,0.2);
-$debug-green: rgba(0,255,0,0.2);
-$fucking-magenta: rgba(232,17,127,0.7);
+$debug-pink: rgba(255, 0, 0, .2);
+$debug-green: rgba(0, 255, 0, .2);
+$fucking-magenta: rgba(232, 17, 127, .7);
 
-$alert-yellow:      #ebe16f;
-$alert-red:         #fbe3e4;
-$alert-green:       #e6efc2;
-$alert-blue:        #d5edf8;
+$alert-yellow: #ebe16f;
+$alert-red: #fbe3e4;
+$alert-green: #e6efc2;
+$alert-blue: #d5edf8;
 
-$black:             #000;
-$white:             #fff;
+$black: #000;
+$white: #fff;
+$gray-pale: #eee;
+$gray: #aaa;
 
-$bg-body:           #ececec;
-$body-copy-color:   #555;
-$heading-color:     #888;
+$body-color: #c0c5c6;
+$bg-body: #ececec;
+$body-copy-color: #555;
+$heading-color: #888;
 
-$link-color:        $ppd-green;
-$link-hover:        lighten($link-color, 9%);
+$link-color: $ppd-green;
+$link-hover: lighten($link-color, 9%);
 
 $alert-success: #259b24;
 $alert-info: #03a9f4;
 $alert-warning: #ffc107;
 $alert-danger: #e51c23;
-
-
-.entry-content .svg-orange { fill: ppdorange(1); }
-.entry-content .svg-green { fill: ppdgreen(1); }
-.entry-content .svg-grey { fill: black(0.8); }
-
-.alert-yellow { color: $alert-yellow; }
-.alert-red { color: $alert-red; }
-.alert-green { color: $alert-green; }
-.alert-blue { color: $alert-blue; }

@@ -1,8 +1,8 @@
-/*
- * Converted from WP Theme Name: Dart
- * Description: Dart child theme for the Stargazer parent theme by Justin Tadlock (http://justintadlock.com)
- * Author: Daniel Bishop
- */
+//
+// Converted from WP Theme Name: Dart
+// Description: Dart child theme for the Stargazer parent theme by Justin Tadlock (http://justintadlock.com)
+// Author: Daniel Bishop
+//
 
 @import 'colors';
 @import 'mixins';
@@ -15,16 +15,31 @@
 
 // Yet to be partial'd out
 body {
-	background-color: #c0c5c6;
+	background-color: $body-color;
 	border-top-color: $ppd-orange;
 }
 
-a {
-	color: ppdorange(0.75);
+.entry-content {
+	.svg-orange { fill: ppdorange(1); }
+	.svg-green { fill: ppdgreen(1); }
+	.svg-grey { fill: black(.8); }
 }
 
-a:hover,
-a:focus,
+.alert-yellow { color: $alert-yellow; }
+.alert-red { color: $alert-red; }
+.alert-green { color: $alert-green; }
+.alert-blue { color: $alert-blue; }
+
+a {
+	color: ppdorange(.75);
+
+	&:hover,
+	&:focus {
+		color: $ppd-orange;
+	}
+}
+
+
 legend,
 mark,
 .required,
@@ -36,29 +51,17 @@ pre code {
 legend,
 mark,
 pre {
-	background-color: ppdorange(0.1);
+	background-color: ppdorange(.1);
 }
 
-input[type='submit'],
-input[type='reset'],
-input[type='button'],
-button,
-#menu-sub-terms li a {
-	background-color: ppdorange(0.8);
+.menu-sub-terms li a {
+	background-color: ppdorange(.8);
 }
 
-input[type='submit']:hover,
-input[type='submit']:focus,
-input[type='reset']:hover,
-input[type='reset']:focus,
-input[type='button']:hover,
-input[type='button']:focus,
-button:hover,
-button:focus,
 .widget-title > .wrap,
-.attachment-meta-title > .wrap,.widget_search > .search-form,
-#menu-sub-terms li a:hover,
-#menu-sub-terms li a:focus,
+.attachment-meta-title > .wrap,
+.menu-sub-terms li a:hover,
+.menu-sub-terms li a:focus,
 .skip-link .screen-reader-text {
 	background-color: $ppd-orange;
 }
@@ -68,18 +71,19 @@ button:focus,
 }
 
 legend {
-	border-color: ppdorange(0.15);
+	border-color: ppdorange(.15);
 }
 
 .entry-content a,
 .entry-summary a {
-	border-bottom-color: ppdorange(0.15);
+	border-bottom-color: ppdorange(.15);
 }
+
 .entry-content a:hover,
 .entry-content a:focus,
 .entry-summary a:hover,
 .entry-summary a:focus {
-	border-bottom-color: ppdorange(0.75);
+	border-bottom-color: ppdorange(.75);
 }
 
 body,
@@ -89,8 +93,8 @@ body,
 }
 
 blockquote {
-	background-color: ppdorange(0.85);
-	outline-color: ppdorange(0.85);
+	background-color: ppdorange(.85);
+	outline-color: ppdorange(.85);
 
 	cite {
 		font-size: inherit;
@@ -98,17 +102,17 @@ blockquote {
 	}
 
 	blockquote {
-		background-color: ppdorange(0.9);
+		background-color: ppdorange(.9);
 	}
 }
 
 
 
-#container>.wrap {
+.container > .wrap {
 	@include breakpoint(babybear) { margin-top: 0; }
 }
 
-#branding {
+.branding {
 	@include breakpoint(babybear) { margin-top: 1rem; }
 
 	a:hover {
@@ -116,11 +120,11 @@ blockquote {
 	}
 }
 
-#menu-primary {
+.menu-primary {
 	background: $ppd-green;
 }
 
-#menu-secondary {
+.menu-secondary {
 	@include breakpoint(babybear) { display: none; }
 
 	.current-menu-item a {
@@ -133,9 +137,7 @@ blockquote {
 	}
 }
 
-#site-title a { color: #555555; }
-
-h1#site-title {
+.site-title {
 	@extend %ir;
 	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjIgNDYiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE2MiA0NiI+PHN0eWxlPi5zdHlsZTB7ZmlsbDogI0QxODMxNjt9LnN0eWxlMXtmaWxsOiAjNTY2QzExO308L3N0eWxlPjxwYXRoIGNsYXNzPSJzdHlsZTAiIGQ9Ik0yNi42IDQ0LjlsMTIuOS0yMi41LTEyLjktMjIuNC0xMyAyMi40eiIvPjxwYXRoIGNsYXNzPSJzdHlsZTEiIGQ9Ik0zOS41IDIyLjRsLTEyLjkgMjIuNS0xMy0yMi41LTEzLjYgMjMuNmg1My4xek02NSAxNi43Yy0uNy0uOC0xLjYtMS4yLTIuNy0xLjItMS4yIDAtMi4xLjQtMi44IDEuMi0uNy44LTEuMSAxLjktMS4xIDMuMiAwIDEuMy40IDIuMyAxLjEgMy4yLjcuOCAxLjYgMS4yIDIuOCAxLjIgMS4xIDAgMi0uNCAyLjctMS4yLjctLjggMS4xLTEuOSAxLjEtMy4xIDAtMS40LS40LTIuNS0xLjEtMy4zbS05LjYgMTUuM3YtMTloMy4ydjEuNWMxLjItMS4yIDIuNy0xLjkgNC4yLTEuOSAxLjkgMCAzLjQuNyA0LjYgMi4xIDEuMiAxLjQgMS45IDMuMSAxLjkgNS4ycy0uNiAzLjgtMS44IDUuMWMtMS4yIDEuNC0yLjggMi00LjYgMi0xLjYgMC0zLS42LTQuMy0xLjl2Ni45aC0zLjJ6TTc1LjggMjYuN2gtMy4ydi0xMy43aDMuMnYxMy43em0tMy0yMC44Yy40LS40LjktLjYgMS40LS42LjYgMCAxLjEuMiAxLjUuNi40LjQuNi45LjYgMS40IDAgLjYtLjIgMS4xLS42IDEuNS0uNC40LS45LjYtMS40LjYtLjYgMC0xLjEtLjItMS41LS42LS40LS40LS42LS45LS42LTEuNS0uMS0uNS4xLTEgLjYtMS40Ii8+PHBhdGggZD0iTTgzIDEzdjEuM2MxLjEtMS4xIDIuMy0xLjYgMy43LTEuNiAxLjYgMCAyLjguNSAzLjcgMS41LjguOSAxLjEgMi4yIDEuMSA0LjJ2OC40aC0zLjJ2LTcuOGMwLTEuMy0uMi0yLjMtLjYtMi44LS40LS41LTEtLjgtMi0uOHMtMS44LjMtMi4yIDFjLS40LjctLjYgMS45LS42IDMuNnY2LjZoLTMuMnYtMTMuNmgzLjN6TTk4LjcgMTN2MS4zYzEuMS0xLjEgMi4zLTEuNiAzLjctMS42IDEuNiAwIDIuOC41IDMuNyAxLjUuOC45IDEuMiAyLjIgMS4yIDQuMnY4LjRoLTMuMnYtNy44YzAtMS4zLS4yLTIuMy0uNi0yLjgtLjQtLjUtMS0uOC0yLS44cy0xLjguMy0yLjIgMWMtLjQuNy0uNiAxLjktLjYgMy42djYuNmgtMy4ydi0xMy42aDMuMnpNMTE1IDIzYy43LjggMS42IDEuMiAyLjcgMS4yIDEuMiAwIDIuMS0uNCAyLjgtMS4yLjctLjggMS4xLTEuOSAxLjEtMy4yIDAtMS4zLS40LTIuMy0xLjEtMy4yLS43LS44LTEuNy0xLjItMi44LTEuMi0xLjEgMC0yIC40LTIuNyAxLjItLjcuOC0xLjEgMS45LTEuMSAzLjEgMCAxLjQuNCAyLjUgMS4xIDMuM205LjYtMTB2MTMuN2gtMy4ydi0xLjRjLTEuMyAxLjItMi43IDEuOC00LjIgMS44LTEuOSAwLTMuNS0uNy00LjctMi0xLjItMS40LTEuOC0zLjEtMS44LTUuMnMuNi0zLjggMS44LTUuMWMxLjItMS40IDIuOC0yLjEgNC42LTIuMSAxLjYgMCAzIC43IDQuMyAydi0xLjdoMy4yek0xMzkuMiAxNy44Yy0uNy0uOS0xLjQtMS41LTEuOS0xLjgtLjYtLjMtMS4yLS41LTItLjUtMS4yIDAtMi4yLjQtMyAxLjMtLjguOC0xLjIgMS45LTEuMiAzLjEgMCAxLjMuNCAyLjMgMS4xIDMuMi44LjggMS43IDEuMiAyLjkgMS4yLjggMCAxLjQtLjIgMi0uNS42LS4zIDEuMi0uOSAyLTEuOXY0LjJjLTEuMy43LTIuNiAxLTMuOCAxLTIuMSAwLTMuOS0uNy01LjMtMi0xLjQtMS40LTIuMS0zLjEtMi4xLTUuMSAwLTIgLjctMy44IDIuMi01LjIgMS40LTEuNCAzLjItMi4xIDUuMy0yLjEgMS4zIDAgMi42LjMgMy44IDF2NC4xek0xNDIuNyAzaDMuMnYyMy43aC0zLjJ6TTE1NS40IDE1LjVjLS40IDAtLjcuMS0xLjEuMi0uMy4xLS42LjMtLjkuNS0uMy4yLS41LjUtLjcuOC0uMi4zLS4zLjctLjQgMS4xaDYuM2MtLjQtMS44LTEuNS0yLjYtMy4yLTIuNm0tMy4zIDUuMWMuMSAxLjEuNCAyIDEuMSAyLjcuNi43IDEuNSAxIDIuNSAxIC44IDAgMS40LS4yIDItLjYuNS0uNCAxLjEtMS4xIDEuNy0yLjFsMi43IDEuNWMtLjQuNy0uOCAxLjMtMS4zIDEuOHMtMSAuOS0xLjUgMS4yYy0uNS4zLTEuMS42LTEuNy43LS42LjItMS4zLjItMiAuMi0yIDAtMy43LS43LTQuOS0yLTEuMi0xLjMtMS45LTMuMS0xLjktNS4zIDAtMi4yLjYtMy45IDEuOC01LjIgMS4yLTEuMyAyLjgtMiA0LjgtMnMzLjYuNiA0LjggMS45YzEuMiAxLjMgMS43IDMgMS43IDUuM3YuN2gtOS44ek02MC45IDM4LjJjMC0xLS43LTIuMS0xLjgtMi4xcy0xLjggMS4xLTEuOCAyLjEuNyAyLjEgMS44IDIuMSAxLjgtMS4xIDEuOC0yLjFtLTMuNC0zLjFjLjUtLjYgMS4zLS45IDIuMS0uOSAyLjEgMCAzLjUgMiAzLjUgNCAwIDIuMS0xLjMgNC4xLTMuNSA0LjEtLjggMC0xLjYtLjMtMi0xdjQuN2gtMi4ydi0xMS42aDIuMnYuN3pNNjQuNSAzMC4zaDIuMnYxMS43aC0yLjJ6TTczLjkgMzguMmMwLTEtLjctMi4xLTEuOC0yLjFzLTEuOCAxLjEtMS44IDIuMS43IDIuMSAxLjggMi4xIDEuOC0xLjEgMS44LTIuMW0xLjkgMy44aC0yLjF2LS43Yy0uNS42LTEuMy45LTIuMS45LTIuMiAwLTMuNS0yLTMuNS00LjEgMC0yIDEuMy00IDMuNS00IC44IDAgMS42LjMgMi4xIDF2LS43aDIuMXY3LjZ6TTc5LjggMzUuMWMuNS0uNyAxLjItLjkgMi0uOSAyIDAgMi42IDEuNCAyLjYgMy4ydjQuNmgtMi4ydi00YzAtLjkuMS0yLjEtMS4yLTIuMXMtMS4zIDEuNC0xLjMgMi4zdjMuOGgtMi4ydi03LjZoMi4ydi43ek05NC4xIDM4LjJjMC0xLS43LTIuMS0xLjgtMi4xcy0xLjggMS4xLTEuOCAyLjEuNyAyLjEgMS44IDIuMWMxLjIgMCAxLjgtMS4xIDEuOC0yLjFtLS4yIDNjLS41LjYtMS4zIDEtMi4xIDEtMi4yIDAtMy41LTItMy41LTQuMSAwLTIgMS4zLTQgMy41LTQgLjggMCAxLjYuMyAyLjEuOXYtNC44aDIuMnYxMS44aC0yLjJ2LS44ek0xMDIuNyAzNy4yYy0uMS0uOC0uNi0xLjUtMS40LTEuNS0uOSAwLTEuMy43LTEuNSAxLjVoMi45em0tMi45IDEuM2MwIDEgLjQgMiAxLjUgMiAuNyAwIDEuMi0uNCAxLjUtMWwyIC4zYy0uNSAxLjUtMS45IDIuNC0zLjQgMi40LTIuNCAwLTMuOC0xLjctMy44LTRzMS4yLTQuMSAzLjctNC4xIDMuNiAxLjggMy42IDQuMXYuM2gtNS4xek0xMDkuOSAzNi4yYy0uMy0uMy0uNy0uNS0xLjEtLjUtLjQgMC0uNy4zLS43LjcgMCAuNi44LjcgMS42IDEgLjguMyAxLjYuOSAxLjYgMi4yIDAgMS43LTEuNCAyLjctMyAyLjctMSAwLTItLjUtMi43LTEuM2wxLTEuM2MuNC41IDEgLjkgMS42LjkuNSAwIC45LS4zLjktLjggMC0uNy0uOC0uOC0xLjUtMS4xLS44LS4zLTEuNS0uOC0xLjUtMiAwLTEuNCAxLTIuNSAyLjQtMi41LjggMCAxLjguMiAyLjQuOGwtMSAxLjJ6TTExNC44IDQyaC0yLjJ2LTcuNmgyLjJ2Ny42em0uMi0xMC44YzAgLjctLjYgMS4zLTEuMyAxLjMtLjcgMC0xLjMtLjYtMS4zLTEuMyAwLS43LjYtMS4zIDEuMy0xLjMuNyAwIDEuMy42IDEuMyAxLjMiIGNsYXNzPSJzdHlsZTEiLz48cGF0aCBkPSJNMTIxLjkgMzguMmMwLTEtLjctMi4xLTEuOC0yLjFzLTEuOCAxLjEtMS44IDIuMS43IDIuMSAxLjggMi4xYzEuMiAwIDEuOC0xLjEgMS44LTIuMW0yIDMuM2MwIDIuNS0uOCA0LjUtMy43IDQuNS0xLjkgMC0zLjctMS4xLTMuOC0zLjJoMi4zYy4xLjguNyAxLjMgMS41IDEuMyAxLjUgMCAxLjYtMS4zIDEuNi0yLjV2LS41Yy0uNS42LTEuMyAxLTIuMSAxLTIuMiAwLTMuNC0xLjktMy40LTRzMS4zLTQuMSAzLjUtNC4xYy44IDAgMS41LjQgMiAxdi0uN2gyLjJ2Ny4yek0xMjcuOSAzNS4xYy41LS43IDEuMi0uOSAyLS45IDIgMCAyLjYgMS40IDIuNiAzLjJ2NC42aC0yLjJ2LTRjMC0uOSAwLTIuMS0xLjItMi4xLTEuMyAwLTEuMyAxLjQtMS4zIDIuM3YzLjhoLTIuMnYtNy42aDIuMnYuN3pNMTM2LjcgMzkuOGwtMi4yIDQuNi0xLjQtLjIgMS43LTQuN3pNMTQzLjIgNDBoMy4ydjJoLTUuNXYtMTEuN2gyLjN6TTE0OS43IDQwaDMuMnYyaC01LjV2LTExLjdoMi4zek0xNjEuNSAzMy40Yy0uNi0uOC0xLjYtMS4yLTIuNi0xLjItMi4yIDAtMy40IDItMy40IDRzMS4zIDMuOSAzLjQgMy45YzEgMCAxLjktLjUgMi42LTEuMnYyLjdjLS44LjQtMS43LjctMi42LjctMy4zIDAtNS43LTIuOC01LjctNiAwLTMuMyAyLjMtNi4yIDUuNy02LjIuOSAwIDEuOC4yIDIuNi43djIuNnoiIGNsYXNzPSJzdHlsZTEiLz48L3N2Zz4=');
 	background-repeat: no-repeat;
@@ -148,8 +150,11 @@ h1#site-title {
 		height: 63px;
 		width: 220px;
 	}
+
+	a { color: $body-copy-color; }
 }
-#site-description {
+
+.site-description {
 	display: none;
 }
 
@@ -164,13 +169,13 @@ h1#site-title {
 }
 
 .main {
-	word-break: normal;
 	hyphens: none;
+	word-break: normal;
 }
 
-#footer {
+.footer {
 	// background: #444;
-	background-color: lighten(#c0c5c6, 10%);
+	background-color: lighten($body-color, 10%);
 
 	.credit a {
 		color: $ppd-green;
@@ -178,51 +183,50 @@ h1#site-title {
 }
 
 .serving {
-	color: darken(#c0c5c6, 5%);
-	font-size: 0.8em;
+	color: darken($body-color, 5%);
+	font-size: .8em;
 	text-align: justify;
 }
 
-#menu-primary li li a,
-#menu-secondary li li a {
+.menu-primary li li a,
+.menu-secondary li li a {
 	background: $ppd-green;
 	border-color: $ppd-orange;
 }
-#menu-primary ul ul li a:hover,
-#menu-secondary ul ul li a:hover {
+
+.menu-primary ul ul li a:hover,
+.menu-secondary ul ul li a:hover {
 	background: $ppd-green;
 }
-.menu li > ul:before {
+
+.menu li > ul::before {
 	border-bottom-color: $ppd-green;
 }
-.ltr .menu li li > ul:before {
+
+.ltr .menu li li > ul::before {
 	border-right-color: $ppd-green;
 }
+
 .entry-header .entry-title {
 	color: $ppd-green;
 	font-size: 2rem;
 }
+
 .entry-header .entry-title a {
 	color: $ppd-green;
 }
 
-.bypostauthor .comment-content {
-	background: $ppd-orange;
-}
-
-
-
 @media only screen and (max-width: 799px) {
-	#menu-secondary .wrap { background: $ppd-green; }
+	.menu-secondary .wrap { background: $ppd-green; }
 
-	#menu-primary li a,
-	#menu-secondary li a {
+	.menu-primary li a,
+	.menu-secondary li a {
 		background: $ppd-green;
 		border-color: $ppd-orange;
 	}
 
-	#menu-primary li a:hover,
-	#menu-secondary li a:hover {
+	.menu-primary li a:hover,
+	.menu-secondary li a:hover {
 		background: $ppd-green;
 	}
 }

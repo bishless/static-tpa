@@ -7,9 +7,9 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "proxima-nova-condensed", "Arial Narrow", Arial, sans-serif;
-	font-weight: 800;
+	font-family: 'proxima-nova-condensed', 'Arial Narrow', Arial, sans-serif;
 	font-style: normal;
+	font-weight: 800;
 }
 
 .font-primary,
@@ -19,21 +19,25 @@ textarea,
 .label-checkbox,
 .label-radio,
 .required,
-#site-description {
-	font-family: "proxima-nova", sans-serif;
+.site-description {
+	font-family: 'proxima-nova', sans-serif;
 }
-.font-secondary {
+
+.font-secondary,
+.entry-footer {
 	font-family: 'Calibri', sans-serif;
 }
 
-#site-title.font-headlines {
-	font-size: 3rem;
+.site-title {
+	&.font-headlines {
+		font-size: 3rem;
+	}
 }
 
 .widget-title > .wrap,
 .attachment-meta-title > .wrap {
-    font-size: 1.5rem;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-    text-transform: none;
+	font-size: 1.5rem;
+	font-weight: 400;
+	letter-spacing: .1rem;
+	text-transform: none;
 }

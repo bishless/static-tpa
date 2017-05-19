@@ -4,18 +4,16 @@ $input-border:					#ddd !default;
 $input-border-focus:			#999 !default;
 $input-label:					#666 !default;
 $input-error:					$alert-danger !default;
-$input-shadow:					1px 1px 2px #EEE inset !default;
-$input-transition:				all 0.3s ease-in-out !default;
+$input-shadow:					1px 1px 2px #eee inset !default;
+$input-transition:				all .3s ease-in-out !default;
 
-$form-button-background:		#333 !default;
-$form-button-background-hover:	$ppd-green !default;
+$form-button-background:		ppdgreen(.8) !default;
+$form-button-background-hover:	ppdgreen(1) !default;
 $form-button-color:				#fff !default;
 
-$form-required:					#F00 !default;
+$form-required:					#f00 !default;
 $form-muted:					#858585 !default;
 
 $form-font-size:				16px !default;
 $form-line-height:				$form-font-size * 1.5 !default;
 $form-space:					$form-line-height / 2 !default;
-
-$gray: #aaa;
