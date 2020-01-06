@@ -1,0 +1,16 @@
+- _js/
+- _kit/
+- _scss/
+- _svg/
+- .git/
+- backup/
+- .DS_Store
+- *.md
+- .editorconfig
+- .gitignore
+- .jshintrc
+- *.yml
+- *.codekit3
++ assets/*
++ stargazer/*
++ *.html
